@@ -1,0 +1,36 @@
+<h1>Editing Form</h1>
+ 
+<%= form_for :form, url: forms_path(@form), method: :patch do |f| %>
+  <% if @form.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@article.errors.count, "error") %> prohibited
+      this form from being saved:</h2>
+    <ul>
+    <% @form.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :First_Name %><br>
+    <%= f.text_field :First_Name %>
+</p>
+<p> 
+    <%= f.label :Last_Name %><br>
+    <%= f.text_field :LAST_Name %>
+<p>
+  <%= f.label :Class %><br>
+    <%= f.text_field :Class %>
+</p>
+<p> 
+    <%= f.label :Gender %><br>
+    <%= f.text_field :Gender %>
+</p>  
+
+<p>
+    <%= f.submit %>
+  </p>
+<% end %>
+ 
+<%= link_to 'Back', forms_path %>
